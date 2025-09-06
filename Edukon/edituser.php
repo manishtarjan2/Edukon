@@ -24,33 +24,34 @@ $conn->close();
 }
 ?>
 
- <div class="cointainer">
-        <div class="row col-mid col-midoffset-3">
-            <div class="panal panal-primary">
-                <div class="panel-heading text-center">
-                    <h1>Registration Form</h1>
-                </div>
-                <div class="panel-body">
-
-                    
-                    <form action="conect.php" method="POST">
+<div class="cointainer">
+    <div class="row col-mid col-midoffset-3">
+        <div class="panal panal-primary">
+            <div class="panel-heading text-center">
+                <h1>Registration Form</h1>
+            </div>
+            <div class="panel-body">
 
 
-                        <fieldset>
-                          <legend>Personal Details:</legend>
+                <form action="conect.php" method="POST">
+
+
+                    <fieldset>
+                        <legend>Personal Details:</legend>
 
                         <div class="form-group">
                             <lable for="firstName">First Name:</lable>
-                            <input type="text" class="form-control" id="firstName" name="firstName"  placeholder="Ram"/>
-                            
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Ram" />
+
                         </div>
 
-                         <div class="form-group">
+                        <div class="form-group">
                             <lable for="lastName">Last Name:</lable>
-                            <input type="text" class="form-control" id="firstName" name="lastName"   placeholder="Shyam"/>
+                            <input type="text" class="form-control" id="firstName" name="lastName"
+                                placeholder="Shyam" />
                         </div>
 
-                        
+
                         <div class="form-group">
                             <lable for="gender">Gender:</lable>
 
@@ -58,39 +59,42 @@ $conn->close();
                                 <lable for="male" class="radio-inline"></lable>
                                 <input type="radio" name="gender" id="male" value="m">Male:</lable>
 
-                                 <lable for="male" class="radio-inline"></lable>
+                                <lable for="male" class="radio-inline"></lable>
                                 <input type="radio" name="gender" id="Female" value="f">Female:</lable>
 
-                                 <lable for="male" class="radio-inline"></lable>
+                                <lable for="male" class="radio-inline"></lable>
                                 <input type="radio" name="gender" id="other" value="o">Other:</lable>
                             </div>
                         </div>
 
-                         <div class="form-group">
+                        <div class="form-group">
                             <lable for="email">Email:</lable>
-                            <input type="text" class="form-control" name="email" id="email" value="email"   placeholder="Email"/>
+                            <input type="text" class="form-control" name="email" id="email" value="email"
+                                placeholder="Email" />
                         </div>
 
-                         <div class="form-group">
+                        <div class="form-group">
                             <lable for="password">Password:</lable>
-                            <input type="text" class="form-control" name="password" id="password" value="password"   placeholder="Pass@123"/>
+                            <input type="text" class="form-control" name="password" id="password" value="password"
+                                placeholder="Pass@123" />
                         </div>
 
-                         <div class="form-group">
+                        <div class="form-group">
                             <lable for="number">Phone Number:</lable>
-                            <input type="text" class="form-control" name="phone" id="number"  value="number"   placeholder="000000000"/>
+                            <input type="text" class="form-control" name="phone" id="number" value="number"
+                                placeholder="000000000" />
                         </div>
 
                         <input type="submit" class="btn btn-primary">
 
-</fieldset>
+                    </fieldset>
 
-                    </form>
-                </div>
-
-              
-    </div>
-    
+                </form>
+            </div>
 
 
-    <?php include 'footerT.php'; ?>
+        </div>
+
+
+
+        <?php include 'footerT.php'; ?>

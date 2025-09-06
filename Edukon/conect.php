@@ -10,6 +10,7 @@ $gender    = $_POST['gender'];
 $email     = $_POST['email'];
 $password  = $_POST['password'];
 $number    = $_POST['phone'];
+$photo_path = $_POST['photo_path'];
 
 // Database connection
 $conn = new mysqli('localhost','root','','edukond');

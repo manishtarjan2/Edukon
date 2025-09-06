@@ -18,13 +18,15 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+
+
 $sql = "SELECT * FROM registration";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   echo '<table border="1">
   <tr><th>ID</th>
-   <th>UserId</th>
+   <th>User_id</th>
   <th>First Name</th>
   <th>Last Name</th>
    <th>Gender</th>
@@ -46,9 +48,6 @@ if ($result->num_rows > 0) {
   }
 
 
-
-
-  
   echo "</table>";
 } else {
   echo "0 results";
