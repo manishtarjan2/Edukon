@@ -1,5 +1,7 @@
 <?php include 'headerT.php'; ?>
 
+<!-- this page to edit the user detail by the admin -->
+
 <?php
 $servername = "localhost";
 $username = "root";
@@ -23,6 +25,7 @@ if ($result->num_rows > 0) {
 $conn->close();
 }
 ?>
+
 
 <div class="cointainer">
     <div class="row col-mid col-midoffset-3">

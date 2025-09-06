@@ -1,6 +1,6 @@
 <?php include 'headerT.php'; ?>
 
-
+<!-- this page to connect the database file for connection... T -->
 <?php
 error_reporting("0");
 print_r($_POST);
