@@ -1,3 +1,18 @@
+<?php
+// Save the selected mode to the session
+if (isset($_GET['mode'])) {
+ echo $_SESSION['mode'] = $_GET['mode'];
+} else {
+    $_SESSION['mode'] = "defult";
+}
+
+// Get the current mode from session or use 'light' as default
+$mode = $_SESSION['mode'] ?? 'defult';
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,9 +27,11 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-</head>
 
-<body>
+         <link rel="stylesheet" href="modes/<?php echo htmlspecialchars($mode); ?>.css">
+</head>
+<!--  -->
+<body class="<?php echo $_SESSION['mode'];?>-container">  <!-- all are for mode likr dark blue light -->
 
 
 
@@ -34,27 +51,48 @@
 echo @$_SESSION['email'];?>
 </div>
         </p2>
-<?php /*echo
-        <select>
-            <option value="light">🌞</option>
-            <option value="dark">🌙</option>
-            <option value="blue">🔵</option>
-        </select>
-*/?>
-        <!-- Bar Icon -->
-        <div class="menu-bar" onclick="toggleMenu()">☰</div>
 
+
+<!--exp  -->
+
+        <!-- Bar Icon -->
+        <div class="menu-bar" onclick="toggleMenu('menu')">☰</div>
+
+        <!-- mode -->
         <!-- Mini Toggle List -->
         <div class="menu" id="menu">
             <a href="#">Home</a>
             <a href="#">Profile</a>
-            <a href="#">Settings</a>
+            <a href="#" onclick="toggleMenu('submenu')">Settings</a>
             <a href="logout.php">Logout</a>
         </div>
+
+        <div class="menu" id="submenu">
+            <a href="http://localhost/gitproject/Edukon/Edukon/?mode=defult">Defult</a>
+            <a href="http://localhost/gitproject/Edukon/Edukon/?mode=dark">Dark</a>
+            <a href="http://localhost/gitproject/Edukon/Edukon/?mode=blue">Blue</a>
+            <a href="http://localhost/gitproject/Edukon/Edukon/?mode=light">Light</a>
+           
+        </div>
+
+
+
         <script>
-        function toggleMenu() {
-            document.getElementById("menu").classList.toggle("show");
+        function toggleMenu(id) {
+            
+            if(id==='menu'){
+                document.getElementById(id).classList.toggle("show");
+                document.getElementById('submenu').classList.toggle("hide");
+            }
+            if(id==='submenu'){
+            
+                document.getElementById('menu').classList.toggle("hide");
+                document.getElementById(id).classList.toggle("show");
+                
+            }
         }
         </script>
+
+
 
     </header>

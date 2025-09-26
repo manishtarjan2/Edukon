@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 
 $errMessage = "";
-if(@$_POST) {
+if(!empty($_POST['email']) && !empty($_POST['password'])) {
   $sql = "SELECT * FROM registration WHERE email='".$_POST['email']."' AND password='".$_POST['password']."'";
   $result = $conn->query($sql);
 

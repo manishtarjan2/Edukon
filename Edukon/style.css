@@ -165,4 +165,71 @@ option {
   transition: 0.3ms;
 }
 
+/* code for mode */
 
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.theme-form {
+    margin-top: 20px;
+}
+
+select {
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+
+/* defult mode */
+
+body {
+    background-color:purple;
+    color:pink;
+}
+
+.defult-container {
+    background-color:azure;
+    color:wheat;
+    border:1 solid black;
+}
+
+
+/* light mode */
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.light-container {
+    background-color: #f0f0f0;
+    color:#000000;
+
+}
+
+/* dRK MODE */
+body {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+.dark-container {
+    background-color: #1e1e1e;
+}
+
+/* BLUE MODE */
+
+body {
+    background-color: #001f3f;
+    color: #ffffff;
+}
+
+.blue-container {
+    background-color: #003366;
+}
