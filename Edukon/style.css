@@ -1,204 +1,3 @@
-body {
-
-    background-color: antiquewhite;
-}
-
-header{
-    position:fixed;
-}
-
-header,
-p {
-    font-size: 20px;
-    font-weight: 200px;
-    color: antiquewhite;
-    background-color: deepskyblue;
-    width: 100%;
-    height: 20px;
-    align-items: center;
-    position: relative;
-    justify-content: center;
-}
-
-header,
-a {
-    text-decoration: none;
-    transform: none;
-
-}
-
-fieldset {
-    align-items: center;
-    margin: 10px 10px 10px;
-
-}
-
-.panel-heading text-center,
-h1 {
-    color: blue;
-    
-}
-
-header,
-.panel-body,
-.form-group {
-    font-size: 20px;
-    display: flex;
-    padding: 2px;
-
-}
-
-header,
-p2 {
-    display: flex;
-    text-decoration: none;
-
-}
-
-header,
-p2,
-a {
-    position: relative;
-    font-size: 18px;
-    margin-right: 1%;
-
-}
-
-header,
-p2
-a:hover {
-    color: aliceblue;
-    cursor: pointer;
-
-}
-
-input {
-    font: italic;
-    color: cornflowerblue;
-    font-size: 12px;
-}
-
-legend {
-    color: red;
-}
-
-
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    font-size: 15px;
-    padding: 0px;
-
-}
-
-select {
-    cursor: pointer;
-}
-
-option {
-    cursor: pointer;
-}
-
-.menu-bar {
-    font-size: 15px;
-    cursor: pointer;
-    padding: 2px;
-    background: #333;
-    color: white;
-}
-
-.menu {
-    display: none;
-    flex-direction: column;
-    background: #444;
-    position: absolute;
-    top: 30px;
-    border-radius: 8px;
-    overflow: hidden;
-    align-items: right;
-    z-index: 100;
-    right: 10px;
-
-}
-
-
-.menu a {
-    padding: 10px 20px;
-    text-decoration: none;
-    color: white;
-    display: block;
-}
-
-.menu.show {
-    display: flex;
-}
-
-.table {
-    color: blue;
-}
-
-
-
-
-.college-profile {
-    display: flex;
-    padding: 2px;
-    font-weight: 100;
-}
-
-.college-profilem,img{
-    color: blue;
-    display: flex;
-    width: 200px;
-    height: 200px;
-}
-
-
-.college-profilem ,a img:hover{
-  fill: navy;
-  cursor: pointer;
-  color:brown;
-  transform: scale(1.1);
-  transition: 0.3ms;
-}
-
-/* code for mode */
-
-
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.theme-form {
-    margin-top: 20px;
-}
-
-select {
-    padding: 5px 10px;
-    font-size: 1rem;
-}
-
-
-/* defult mode */
-
-body {
-    background-color:purple;
-    color:pink;
-}
-
-.defult-container {
-    background-color:azure;
-    color:wheat;
-    border:1 solid black;
-}
-
 
 /* light mode */
 
@@ -208,7 +7,7 @@ body {
 }
 
 .light-container {
-    background-color: #f0f0f0;
+    background-color:wheat;
     color:#000000;
 
 }
@@ -216,20 +15,24 @@ body {
 /* dRK MODE */
 body {
     background-color: #121212;
-    color: #f0f0f0;
+    color: aqua;
 }
 
 .dark-container {
-    background-color: #1e1e1e;
+    background-color:gray;
 }
 
 /* BLUE MODE */
 
 body {
-    background-color: #001f3f;
-    color: #ffffff;
+    background-color:wheat;
+    color:deepskyblue;
 }
 
 .blue-container {
     background-color: #003366;
+}
+
+.menu-bar{
+ text-align: right;
 }
