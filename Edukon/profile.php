@@ -24,25 +24,34 @@ $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 
 // Profile photo (check if uploaded, else fallback to default)
-$imgPath = !empty($user["photo_path"]) ? "uploads/" . htmlspecialchars($user["photo_path"]) : "uploads/default.png";
+$imgPath = (!empty($user["photo_path"]) && file_exists("uploads/" . $user["photo_path"])) 
+    ? "uploads/" . htmlspecialchars($user["photo_path"]) 
+    : "uploads/default.jpeg";
 ?>
 
-<div class="bg-gray-100 min-h-screen p-6">
+<!-- Main Content -->
+<div class="bg-gray-100 dark:bg-gray-900 min-h-screen p-6">
     <div class="flex justify-between items-center mb-6">
-        <h2 class="text-4xl font-bold text-gray-800">
+        <h2 class="text-4xl font-bold text-gray-800 dark:text-gray-100">
             Welcome, <?= htmlspecialchars($user['firstName']) ?>
         </h2>
         <a href="logout.php" class="text-red-500 hover:underline text-lg">Logout</a>
     </div>
 
     <!-- Profile Card -->
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 flex flex-col md:flex-row items-center gap-6 mb-8">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-8 transition transform hover:scale-[1.01]">
+        
         <!-- Profile Photo -->
-        <img src="<?= $imgPath ?>" alt="Profile Photo" class="w-32 h-32 rounded-full object-cover border-2 border-gray-300 shadow-sm">
+        <div class="relative">
+            <img src="<?= $imgPath ?>" 
+                 alt="Profile Photo" 
+                 class="w-36 h-36 rounded-full object-cover border-4 border-blue-500 shadow-md">
+            <span class="absolute bottom-2 right-2 bg-green-500 w-4 h-4 rounded-full border-2 border-white dark:border-gray-800"></span>
+        </div>
 
         <!-- Profile Details -->
-        <div class="flex-1">
-            <h3 class="text-2xl font-bold text-blue-600 mb-2">
+        <div class="flex-1 space-y-3">
+            <h3 class="text-3xl font-extrabold text-blue-600 dark:text-blue-400 mb-4">
                 <?= htmlspecialchars($user['firstName'] . ' ' . $user['lastName']) ?>
             </h3>
             <p class="text-gray-700 dark:text-gray-300"><strong>User ID:</strong> <?= htmlspecialchars($user['user_id']) ?></p>

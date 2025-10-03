@@ -1,4 +1,7 @@
-<?php include 'headerT.php'; ?>
+<?php
+session_start();
+include 'headerT.php';
+?>
 
 <div class="container mx-auto px-4 py-12 space-y-20">
 
