@@ -18,6 +18,10 @@ export async function GET() {
             })
         }
 
+        const host = process.env.NEXT_PUBLIC_APP_URL || process.env.VERCEL_URL || 'localhost:3000'
+        const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http'
+        const baseUrl = host.includes('http') ? host : `${protocol}://${host}`
+
         return NextResponse.json({
             found: true,
             message: '✅ Founder account exists!',
@@ -30,7 +34,7 @@ export async function GET() {
                 createdAt: founder.createdAt
             },
             loginInfo: {
-                url: 'http://localhost:3000/admin/login',
+                url: `${baseUrl}/admin/login`,
                 email: founder.email,
                 note: 'Password is hashed in database - use: Founder@123'
             }
