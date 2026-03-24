@@ -1,0 +1,32 @@
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+import { jwtVerify } from 'jose'
+
+export async function middleware(req: NextRequest) {
+  const token = req.cookies.get('admin_token')?.value
+  const pathname = req.nextUrl.pathname
+
+  if (!token) {
+    return NextResponse.redirect(new URL('/admin/login', req.url))
+  }
+
+  try {
+    const secret = new TextEncoder().encode(process.env.JWT_SECRET!)
+    const { payload } = await jwtVerify(token, secret)
+
+    // Founder page: only founders can access
+    if (pathname.startsWith('/founder')) {
+      if (payload.role !== 'founder') {
+        return NextResponse.redirect(new URL('/admin/dashboard', req.url))
+      }
+    }
+
+    return NextResponse.next()
+  } catch {
+    return NextResponse.redirect(new URL('/admin/login', req.url))
+  }
+}
+
+export const config = {
+  matcher: ['/admin/dashboard/:path*', '/admin/edit/:path*', '/founder/:path*'],
+}
